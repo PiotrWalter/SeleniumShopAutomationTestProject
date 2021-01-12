@@ -14,3 +14,4 @@ class TestCheckoutProcess(BaseTest):
     def test_full_checkout(self):
         checkout_page = CheckoutPage(self.driver)
         checkout_page.log_in_find_item_add_item_and_check_out()
+        self.assertTrue(checkout_page.check_is_your_order_complete_confirmation_visible())

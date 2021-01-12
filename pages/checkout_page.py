@@ -25,6 +25,9 @@ class CheckoutPage(MainPage, SignInPage, SearchItemPage, ProductsPage, ProductDe
     def check_is_error_shipping_popup_visible(self):
         return self.presence_of_element_located(self.checkout_locators.POPUP_ERROR_WHILE_NO_SHIPPING_TERMS)
 
+    def check_is_your_order_complete_confirmation_visible(self):
+        return self.presence_of_element_located(self.checkout_locators.SUCCESS_ALERT)
+
     def proceed_through_checkout_to_shipping_confirmation(self):
         self.proceed_to_checkout_button_click(self.checkout_locators.PROCEED_TO_CHECKOUT_BUTTON)
         self.proceed_to_checkout_button_click(self.checkout_locators.PROCEED_TO_CHECKOUT_BUTTON)
